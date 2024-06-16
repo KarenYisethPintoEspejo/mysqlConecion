@@ -15,7 +15,10 @@
 
 import { getAllProductsStock } from "./js/module/product.js";
 
+import { getEmployeesSpecificOffice } from "./js/module/employees.js";
 
 
 
-console.log(await getAllProductsStock())  //Consulta 1
+
+console.log(await getAllProductsStock());  //Consulta 1
+console.log(await getEmployeesSpecificOffice({office:1}));  //Consulta 2
