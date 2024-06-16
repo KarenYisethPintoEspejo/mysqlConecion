@@ -18,6 +18,7 @@ import { getEmployeesSpecificOffice, getAllEmployeesWithBoss } from "./js/module
 import { getSpecificCustomer } from "./js/module/customers.js";
 import { getAllPaymentsSpecificCustomer } from "./js/module/payments.js";
 import { getAllOrdersShipped } from "./js/module/orders.js";
+import { getAllOfficesSpecificCountry } from "./js/module/offices.js";
 
 
 
@@ -29,3 +30,4 @@ console.log(await getAllPaymentsSpecificCustomer({payment: 496}));  //Consulta 4
 console.log(await getAllOrdersShipped()); //Consulta 5
 console.log(await getAllProductsAmountStock());  //Consulta 6
 console.log(await getAllEmployeesWithBoss());  //Consulta 7
+console.log(await getAllOfficesSpecificCountry());  //Consulta 8
