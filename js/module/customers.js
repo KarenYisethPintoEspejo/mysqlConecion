@@ -17,3 +17,10 @@ export const getSpecificCustomer = async ({customerNumber} = {customerNumber: 49
     const [result] = await connection.execute(`select customerNUmber, customerName, contactFirstName, contactLastName, phone from customers where customerNumber = ?`, [customerNumber]);
     return result;
 }
+
+
+// 9. **Listar todos los clientes en una ciudad específica (por ejemplo, 'Madrid'):**
+export const getAllCustomerSpecificCity = async({city} = {city:Madrid}) =>{
+    const [result] = await connection.execute(`select customerNumber, customerName, contactFirstName, contactLastName, phone, city, state from customers where city= ?;`, [city]);
+    return result;
+}
