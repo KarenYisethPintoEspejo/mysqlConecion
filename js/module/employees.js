@@ -32,3 +32,11 @@ export const getEmployeesSpecificOffice = async({office} = {office:1}) =>{
     const[result] = await connection.execute(`select firstName, lastName from employees where officeCode = ?;`, [office]);
     return result;
 }
+
+
+// 7. **Lista de todos los empleados con su jefe (si tienen):**
+
+export const getAllEmployeesWithBoss = async()=>{
+    const [result]= await connection.query(`select distinct e.employeeNumber as numeroEmpleado, e.lastName as apellidoEmpleado, e.firstName as nombreEmpleado, e.reportsTo as numeroJefe, j.firstName as nombreJefe, j.lastName as apellidoJefe, j.jobTitle as puestoDelJefe from employees e inner join employees j on e.reportsTO = j.employeeNumber;`);
+    return result;
+}
