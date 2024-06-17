@@ -24,3 +24,11 @@ export const getAllCustomerSpecificCity = async({city} = {city:Madrid}) =>{
     const [result] = await connection.execute(`select customerNumber, customerName, contactFirstName, contactLastName, phone, city, state from customers where city= ?;`, [city]);
     return result;
 }
+
+
+// 2. 3. **Listar todos los clientes junto con su representante de ventas:**
+
+export const getAllClientsWithSalesRepresentative = async() =>{
+    const [result]= await connection.query(`select c.customerNumber, c.customerName, c.contactFirstName, c.contactLastName, c.salesRepEmployeeNumber, r.firstName, r.lastName from customers c inner join employees r on c.salesRepEmployeeNumber = r.employeeNumber;`);
+    return result;
+}
