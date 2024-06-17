@@ -14,7 +14,7 @@
 
 
 import { getAllProductsStock, getAllProductsAmountStock, getAllProductsPrice50 } from "./js/module/product.js";
-import { getEmployeesSpecificOffice, getAllEmployeesWithBoss } from "./js/module/employees.js";
+import { getEmployeesSpecificOffice, getAllEmployeesWithBoss, getAllEmployeesWithOffice } from "./js/module/employees.js";
 import { getSpecificCustomer, getAllCustomerSpecificCity } from "./js/module/customers.js";
 import { getAllPaymentsSpecificCustomer } from "./js/module/payments.js";
 import { getAllOrdersShipped, getAllOrderSpecificClient } from "./js/module/orders.js";
@@ -35,3 +35,4 @@ console.log(await getAllCustomerSpecificCity({city: 'Madrid'}));  //Consulta 9
 console.log(await getAllProductsPrice50()); //Consulta 10
 
 console.log(await getAllOrderSpecificClient({clientNumber:496}));  //Consulta 11
+console.log(await getAllEmployeesWithOffice()); //Consulta 12
