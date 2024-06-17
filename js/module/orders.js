@@ -14,3 +14,11 @@ export const getAllOrderSpecificClient = async({clientNumber} = {clientNumber : 
     const [result] = await connection.execute(`select o.orderNumber, o.orderDate, o.status, d.quantityOrdered, d.productCode, p.productName, p.buyPrice from orders o inner join orderdetails d on o.orderNumber = d.orderNumber inner join products p on p.productCode = d.productCode where customerNumber = ?;`, [clientNumber]);
     return result;
 }
+
+
+// 2. 4. **Obtener el nombre y la cantidad total ordenada de cada producto:**
+
+export const getAllProductNameAmount = async()=>{
+    const [result]= await connection.query(`select p.productName, sum(o.quantityOrdered) cantidadTotalOrdenada from products p inner join orderdetails o on p.productCode = o.productCode group by productName;`);
+    return result;
+}

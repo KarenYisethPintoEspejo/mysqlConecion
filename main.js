@@ -17,7 +17,7 @@ import { getAllProductsStock, getAllProductsAmountStock, getAllProductsPrice50 }
 import { getEmployeesSpecificOffice, getAllEmployeesWithBoss, getAllEmployeesWithOffice } from "./js/module/employees.js";
 import { getSpecificCustomer, getAllCustomerSpecificCity, getAllClientsWithSalesRepresentative } from "./js/module/customers.js";
 import { getAllPaymentsSpecificCustomer } from "./js/module/payments.js";
-import { getAllOrdersShipped, getAllOrderSpecificClient } from "./js/module/orders.js";
+import { getAllOrdersShipped, getAllOrderSpecificClient, getAllProductNameAmount } from "./js/module/orders.js";
 import { getAllOfficesSpecificCountry } from "./js/module/offices.js";
 
 
@@ -37,4 +37,5 @@ console.log(await getAllProductsPrice50()); //Consulta 10
 console.log(await getAllOrderSpecificClient({clientNumber:496}));  //Consulta 11
 console.log(await getAllEmployeesWithOffice()); //Consulta 12
 console.log(await getAllClientsWithSalesRepresentative()); //Consulta 13
+console.log(await getAllProductNameAmount());  //Consulta 14
 
