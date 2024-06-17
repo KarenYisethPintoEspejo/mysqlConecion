@@ -13,7 +13,7 @@
 // console.log(await getAllLastNameDESC());
 
 
-import { getAllProductsStock, getAllProductsAmountStock } from "./js/module/product.js";
+import { getAllProductsStock, getAllProductsAmountStock, getAllProductsPrice50 } from "./js/module/product.js";
 import { getEmployeesSpecificOffice, getAllEmployeesWithBoss } from "./js/module/employees.js";
 import { getSpecificCustomer, getAllCustomerSpecificCity } from "./js/module/customers.js";
 import { getAllPaymentsSpecificCustomer } from "./js/module/payments.js";
@@ -32,3 +32,4 @@ console.log(await getAllProductsAmountStock());  //Consulta 6
 console.log(await getAllEmployeesWithBoss());  //Consulta 7
 console.log(await getAllOfficesSpecificCountry());  //Consulta 8
 console.log(await getAllCustomerSpecificCity({city: 'Madrid'}));  //Consulta 9
+console.log(await getAllProductsPrice50()); //Consulta 10
